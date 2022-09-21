@@ -1,0 +1,75 @@
+<!-- comment -->
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<title>SOLS excitation: Uniform light-sheets</title>
+    <link rel="stylesheet" href="stylesheets/style.css">
+    <link rel="stylesheet" href="stylesheets/prism.css">
+    <script src="javascript/python-highlighting/prism.js"></script>
+    <script async src="javascript/Minimal-MathJax/MathJax.js?config=TeX-AMS_CHTML"></script>
+    <script src="javascript/update_figures.js"></script>
+    <script src="javascript/reference_list/reference_list.js"></script>
+</head>
+
+<body>
+<section>
+	<a href="https://amsikking.github.io/">Home page</a>
+	<h1>amsikking: SOLS excitation</h1>
+	<a href="./index.html">Index</a>
+
+	<h2>Uniform light-sheets</h2>
+	<p>
+	One way to choose a 'uniform' light-sheet is to keep the <strong>intensity
+	above 90%</strong> for the length of the sample \(z_s\):
+	
+	\[ z_{90} \geq \frac{z_s}{2} \tag{1}\]
+	
+	where,
+	
+	\[ z_{90} = \frac{z_R}{3} \tag{2}\]
+	
+	and so we require:
+	
+	\[ z_R \geq \frac{3z_s}{2} \tag{3}\]
+	
+	</p>
+	
+	<figure>
+    <img src="figures/SOLS_excitation_uniform.png" alt="SOLS_excitation_uniform.png">
+    <figcaption>
+	(<a href="figures/SOLS_excitation_sketches.odp">.odp sketch</a>)
+	</figcaption>
+	</figure>
+
+	<p>
+	The beam waist is related to the Rayleigh range with:
+	
+	\[ w_0 = \sqrt{\frac{\lambda_0 z_R}{\pi n}} \tag{4}\]
+	
+	So for a given sample size we can find the <em>transverse</em> full width 
+	half max with:
+	
+	\[ w_{FWHM} = \sqrt{\frac{3 \ln 2 \lambda_0 z_s}{\pi n}} \tag{5}\]
+
+	which we can readily plot over the sample ranges interest, for example 5-100um:
+	</p>
+
+	<figure>
+    <img src="figures/SOLS_uniform_lightsheets.png" alt="SOLS_uniform_lightsheets.png">
+    <figcaption>
+	(<a href="figures/SOLS_thin_lightsheets.py">Python script</a>)
+	</figcaption>
+	</figure>
+
+	<p>
+	<strong>Note:</strong> This setup benefits from <em>even illumination</em> (ignoring
+	absorption and scattering), but the light-sheets can be quite <em>thick</em> 
+	(e.g. 5um for 100um sample!). Thick light-sheets reduce sectioning and increase 
+	<em>photodose</em> for fine sampling.
+	</p>
+
+</section>
+</body>
+</html>

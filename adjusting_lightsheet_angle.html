@@ -1,0 +1,63 @@
+<!-- comment -->
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<title>SOLS excitation: Adjusting light-sheet angle</title>
+    <link rel="stylesheet" href="stylesheets/style.css">
+    <link rel="stylesheet" href="stylesheets/prism.css">
+    <script src="javascript/python-highlighting/prism.js"></script>
+    <script async src="javascript/Minimal-MathJax/MathJax.js?config=TeX-AMS_CHTML"></script>
+    <script src="javascript/update_figures.js"></script>
+    <script src="javascript/reference_list/reference_list.js"></script>
+</head>
+
+<body>
+<section>
+	<a href="https://amsikking.github.io/">Home page</a>
+	<h1>amsikking: SOLS excitation</h1>
+	<a href="./index.html">Index</a>
+
+	<h2>Adjusting light-sheet angle</h2>
+	<p>
+	It is important to match the light-sheet <em>angle</em> to the image plane, and 
+	(to a lesser extent) the lightsheet direction in the field of view (FOV). This 
+	can be done by adjusting the <em>position</em> of the excitation in the back 
+	focal plane of objective 1, for example by conjugating a <em>gimbal mirror</em>
+	(or similar) to an intermediate image plane on some part of the excitation path. 
+	If the gimbal mirror has 'tip/tilt' adjustment, then one adjuster be arranged 
+	to <strong>align the light-sheet tilt to the image plane</strong>,
+	</p>
+
+	<figure>
+    <img src="figures/SOLS_excitation_angle_to_image.png" alt="SOLS_excitation_angle_to_image.png">
+    <figcaption>
+	(<a href="figures/SOLS_excitation_sketches.odp">.odp sketch</a>)
+	</figcaption>
+	</figure>
+
+	<p>
+	and the other adjuster to <strong>align the light-sheet direction to the field of 
+	view</strong>:
+	</p>
+
+	<figure>
+    <img src="figures/SOLS_excitation_angle_to_center.png" alt="SOLS_excitation_angle_to_center.png">
+    <figcaption>
+	(<a href="figures/SOLS_excitation_sketches.odp">.odp sketch</a>)
+	</figcaption>
+	</figure>
+
+	<p>
+	<strong>Note:</strong> It may be worth <em>automating</em> one or both of these
+	adjustments. For example the light-sheet 'angle to image' adjuster can be used
+	to <strong>chase thermal drift and accommodate different samples</strong> that may 
+	affect this alignment. The 'angle to direction' adjuster can be used to	
+	<strong>scan the light-sheet direction</strong>, which helps with sample 
+	<em>absorption and scattering</em> for more uniform intensity across the FOV.
+	</p>
+
+</section>
+</body>
+</html>

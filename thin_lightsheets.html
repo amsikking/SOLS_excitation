@@ -1,0 +1,83 @@
+<!-- comment -->
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<title>SOLS excitation: Thin light-sheets</title>
+    <link rel="stylesheet" href="stylesheets/style.css">
+    <link rel="stylesheet" href="stylesheets/prism.css">
+    <script src="javascript/python-highlighting/prism.js"></script>
+    <script async src="javascript/Minimal-MathJax/MathJax.js?config=TeX-AMS_CHTML"></script>
+    <script src="javascript/update_figures.js"></script>
+    <script src="javascript/reference_list/reference_list.js"></script>
+</head>
+
+<body>
+<section>
+	<a href="https://amsikking.github.io/">Home page</a>
+	<h1>amsikking: SOLS excitation</h1>
+	<a href="./index.html">Index</a>
+
+	<h2>Thin light-sheets</h2>
+	<p>
+	One way to choose a 'thin' light-sheet is to match the light-sheet 
+	waist to the axial point spread function of the emission 
+	(i.e. \(w_0 = z_0 \sin\theta_e\) in 
+	<a href="https://amsikking.github.io/SOLS_optimum_tilt/">
+	SOLS_optimum_tilt</a>):
+	</p>
+	
+	<figure>
+    <img src="figures/SOLS_excitation_optimum_tilt.png" alt="SOLS_excitation_optimum_tilt.png">
+    <figcaption>
+	(<a href="figures/SOLS_excitation_sketches.odp">.odp sketch</a>)
+	</figcaption>
+	</figure>
+
+	<p>
+	In this regime we can then use:
+
+	\[ \theta_x =  \theta_1 - \theta_e \tag{1}\]
+	
+	and, from <a href="https://amsikking.github.io/SOLS_optimum_tilt/">
+	SOLS_optimum_tilt</a>,
+	
+	\[\tan\theta_e = \frac{\sin\theta_1}{\frac{1}{2\pi} + \cos\theta_1} \tag{2}\]
+	
+	which gives an expression that depends only on the choice of objective:
+
+	\[ \theta_x =  \theta_1 - \arctan \left(
+	\frac{\sin\theta_1}{\frac{1}{2\pi} + \cos\theta_1} \right) \tag{3}\]
+
+	The <em>transverse</em> full width half max of a 
+	<a href="https://amsikking.github.io/gaussian_beam/">Gaussian beam</a>
+	light-sheet is then:
+
+	\[ w_{FWHM} = \sqrt{2\ln2}\frac{\lambda_0}{\pi \theta_x n} \tag{4}\]
+
+	and the <em>longitudinal</em> full width half max is twice the Rayleigh range:
+
+	\[ z_{FWHM} = 2 \frac{\lambda_0}{\pi \theta_x^2 n} \tag{5}\]
+	
+	Since (4) and (5) depend only on \(\theta_1\), we can readily plot the results 
+	over the angular ranges typically available for objective 1:
+	</p>
+
+	<figure>
+    <img src="figures/SOLS_thin_lightsheets.png" alt="SOLS_thin_lightsheets.png">
+    <figcaption>
+	(<a href="figures/SOLS_thin_lightsheets.py">Python script</a>)
+	</figcaption>
+	</figure>
+
+	<p>
+	<strong>Note:</strong> In this configuration the light-sheets are relatively
+	<em>thin</em> (1.0 - 1.4um), which offers good <em>sectioning</em>. However, 
+	they are also quite <em>short</em>, with an <strong>intensity drop of 
+	50%</strong> over 11.5 - 21.9um, which may not be good for many samples!
+	</p>
+
+</section>
+</body>
+</html>
