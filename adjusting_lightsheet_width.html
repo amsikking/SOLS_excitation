@@ -2,57 +2,68 @@
 <!DOCTYPE html>
 
 <html lang="en">
-<head>
+  <head>
 	<meta charset="utf-8">
-	<title>SOLS excitation: Adjusting light-sheet width</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="stylesheets/style.css">
     <link rel="stylesheet" href="stylesheets/prism.css">
     <script src="javascript/python-highlighting/prism.js"></script>
     <script async src="javascript/Minimal-MathJax/MathJax.js?config=TeX-AMS_CHTML"></script>
     <script src="javascript/update_figures.js"></script>
     <script src="javascript/reference_list/reference_list.js"></script>
-</head>
+	<title>amsikking: Adjusting light-sheet width</title>
+  </head>
 
-<body>
-<section>
-	<a href="https://amsikking.github.io/">Home page</a>
-	<h1>amsikking: SOLS excitation</h1>
-	<a href="./index.html">Index</a>
+  <body>
+  	<header>
+	  <nav>
+	    <ul>
+		  <li><h1 style="margin-top: 0rem; margin-left: 1rem; margin-right: 1rem">amsikking:</h1></li>
+		  <li><a href="https://amsikking.github.io/">Home page</a></li>
+		  <li><a href="https://github.com/amsikking/SOLS_excitation">GitHub</a></li>
+	    </ul>
+	  </nav>
+	</header>
 
-	<h2>Adjusting light-sheet width</h2>
-	<p>
-	It is important to match the light-sheet <em>width</em> to the field of view (FOV)
-	that is being imaged on the camera. This ensures the FOV is illuminated and	that 
-	no light falls outside the FOV, which delivers unwanted <em>photodose</em>. 
-	This is easy achieved by adding an <strong>adjustable aperture in an intermediate 
-	image plane</strong> on the excitation path and matching it to the camera FOV:
-	</p>
+	<main>
+	  <h1>SOLS excitation</h1>
+	  <p>In a single-objective light-sheet microscope, how should we configure the excitation?</p>
+	  <a href="./index.html">Contents</a>
+	  <section>
+		<h2>Adjusting light-sheet width</h2>
+		<p>
+		It is important to match the light-sheet <em>width</em> to the field of view (FOV)
+		that is being imaged on the camera. This ensures the FOV is illuminated and	that 
+		no light falls outside the FOV, which delivers unwanted <em>photodose</em>. 
+		This is easy achieved by adding an <strong>adjustable aperture in an intermediate 
+		image plane</strong> on the excitation path and matching it to the camera FOV:
+		</p>
 
-	<figure>
-    <img src="figures/SOLS_excitation_width.png" alt="SOLS_excitation_width.png">
-    <figcaption>
-	(<a href="figures/SOLS_excitation_sketches.odp">.odp sketch</a>)
-	</figcaption>
-	</figure>
+		<figure>
+		  <img src="figures/SOLS_excitation_width.png" alt="SOLS_excitation_width.png">
+		  <figcaption>
+		  (<a href="figures/SOLS_excitation_sketches.odp">.odp sketch</a>)
+		  </figcaption>
+		</figure>
 
-	<p>
-	A Gaussian laser beam with \(\frac{1}{e^2}\) waist \(w_{laser}\) can then be 
-	expanded on this axis to (for example) the full width 90% max for the FOV:
-	
-	\[ w_{laser} = \frac{FOV}{\sqrt{2\ln(10/9)}} \tag{1}\]
-	
-	or in terms of beam diameter \(d_{laser}\):
-	
-	\[ d_{laser} \approx 4.4 \; FOV \tag{2}\]
-	
-	<strong>Note:</strong> 	It is worth considering asymmetric expansion using 
-	<em>cylindrical</em> or <em>Powell</em> lenses to <strong>avoid high laser 
-	power losses</strong>. If the field aperture and expanded beam are in a 
-	<em>magnified</em> image plane (which they usually are), then this 
-	magnification factor should be taken into account when considering the size 
-	of the FOV (and therefore the size of the input laser beam).
-	</p>
-
-</section>
-</body>
+		<p>
+		A Gaussian laser beam with \(\frac{1}{e^2}\) waist \(w_{laser}\) can then be 
+		expanded on this axis to (for example) the full width 90% max for the FOV:
+		
+		\[ w_{laser} = \frac{FOV}{\sqrt{2\ln(10/9)}} \tag{1}\]
+		
+		or in terms of beam diameter \(d_{laser}\):
+		
+		\[ d_{laser} \approx 4.4 \; FOV \tag{2}\]
+		
+		<strong>Note:</strong> 	It is worth considering asymmetric expansion using 
+		<em>cylindrical</em> or <em>Powell</em> lenses to <strong>avoid high laser 
+		power losses</strong>. If the field aperture and expanded beam are in a 
+		<em>magnified</em> image plane (which they usually are), then this 
+		magnification factor should be taken into account when considering the size 
+		of the FOV (and therefore the size of the input laser beam).
+		</p>
+	  </section>
+	</main>
+  </body>
 </html>

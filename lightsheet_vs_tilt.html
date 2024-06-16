@@ -2,65 +2,76 @@
 <!DOCTYPE html>
 
 <html lang="en">
-<head>
+  <head>
 	<meta charset="utf-8">
-	<title>SOLS excitation: Light-sheet vs tilt</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="stylesheets/style.css">
     <link rel="stylesheet" href="stylesheets/prism.css">
     <script src="javascript/python-highlighting/prism.js"></script>
     <script async src="javascript/Minimal-MathJax/MathJax.js?config=TeX-AMS_CHTML"></script>
     <script src="javascript/update_figures.js"></script>
     <script src="javascript/reference_list/reference_list.js"></script>
-</head>
+	<title>amsikking: Light-sheet vs tilt</title>
+  </head>
 
-<body>
-<section>
-	<a href="https://amsikking.github.io/">Home page</a>
-	<h1>amsikking: SOLS excitation</h1>
-	<a href="./index.html">Index</a>
+  <body>
+  	<header>
+	  <nav>
+	    <ul>
+		  <li><h1 style="margin-top: 0rem; margin-left: 1rem; margin-right: 1rem">amsikking:</h1></li>
+		  <li><a href="https://amsikking.github.io/">Home page</a></li>
+		  <li><a href="https://github.com/amsikking/SOLS_excitation">GitHub</a></li>
+	    </ul>
+	  </nav>
+	</header>
 
-	<h2>Light-sheet vs tilt</h2>
-	<p>
-	The SOLS architecture limits the light-sheet divergence \(\theta_x\) 
-	to:
-	
-	\[ \theta_x =  \theta_1 - \theta_e \tag{1}\]
-	
-	where \(\theta_1\) is the collection half angle of the objective and
-	\(\theta_e\) is the collection half angle of the emission (one side
-	only). The emission half angle \(\theta_e\) is then related to the 
-	tilt of the 3rd microscope \(\theta_t\) according to:
-	
-	\[ \theta_e =  \frac{\pi}{2} - \theta_t \tag{2}\]
-	
-	So, combining (1) and (2), we can see that for a given primary objective 
-	lens and tilt angle:
-	
-	\[ \theta_x =  \theta_1 + \theta_t - \frac{\pi}{2} \tag{3}\]
-	
-	If we assume a <a href="https://amsikking.github.io/gaussian_beam/">
-	Gaussian beam</a>, then the <em>thinnest</em> light-sheet 
-	we can accommodate has a waist:
+	<main>
+	  <h1>SOLS excitation</h1>
+	  <p>In a single-objective light-sheet microscope, how should we configure the excitation?</p>
+	  <a href="./index.html">Contents</a>
+	  <section>
+		<h2>Light-sheet vs tilt</h2>
+		<p>
+		The SOLS architecture limits the light-sheet divergence \(\theta_x\) 
+		to:
+		
+		\[ \theta_x =  \theta_1 - \theta_e \tag{1}\]
+		
+		where \(\theta_1\) is the collection half angle of the objective and
+		\(\theta_e\) is the collection half angle of the emission (one side
+		only). The emission half angle \(\theta_e\) is then related to the 
+		tilt of the 3rd microscope \(\theta_t\) according to:
+		
+		\[ \theta_e =  \frac{\pi}{2} - \theta_t \tag{2}\]
+		
+		So, combining (1) and (2), we can see that for a given primary objective 
+		lens and tilt angle:
+		
+		\[ \theta_x =  \theta_1 + \theta_t - \frac{\pi}{2} \tag{3}\]
+		
+		If we assume a <a href="https://amsikking.github.io/gaussian_beam/">
+		Gaussian beam</a>, then the <em>thinnest</em> light-sheet 
+		we can accommodate has a waist:
 
-	\[ w_0 = \frac{\lambda_0}{\pi \theta_x n} \tag{4}\]
-	
-	i.e. more tilting allows thinner light-sheets, but reduces the collection
-	on the emission path (one side only). The Rayleigh range is then related
-	to the divergence with:
-	
-	\[ z_R = \frac{\lambda_0}{\pi \theta_x^2 n} \tag{4}\]
-	
-	i.e. thinner light-sheets have a much shorter range (since 
-	\(w_0 \propto \frac{1}{\theta_x}\) and \(z_R \propto \frac{1}{\theta_x^2}\)).
-	</p>
-	
-	<figure>
-    <img src="figures/SOLS_excitation_vs_tilt.png" alt="SOLS_excitation_vs_tilt.png">
-    <figcaption>
-	(<a href="figures/SOLS_excitation_sketches.odp">.odp sketch</a>)
-	</figcaption>
-	</figure>
-
-</section>
-</body>
+		\[ w_0 = \frac{\lambda_0}{\pi \theta_x n} \tag{4}\]
+		
+		i.e. more tilting allows thinner light-sheets, but reduces the collection
+		on the emission path (one side only). The Rayleigh range is then related
+		to the divergence with:
+		
+		\[ z_R = \frac{\lambda_0}{\pi \theta_x^2 n} \tag{4}\]
+		
+		i.e. thinner light-sheets have a much shorter range (since 
+		\(w_0 \propto \frac{1}{\theta_x}\) and \(z_R \propto \frac{1}{\theta_x^2}\)).
+		</p>
+		
+		<figure>
+		  <img src="figures/SOLS_excitation_vs_tilt.png" alt="SOLS_excitation_vs_tilt.png">
+		  <figcaption>
+		  (<a href="figures/SOLS_excitation_sketches.odp">.odp sketch</a>)
+		  </figcaption>
+		</figure>
+	  </section>
+	</main>
+  </body>
 </html>

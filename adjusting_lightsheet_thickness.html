@@ -2,110 +2,121 @@
 <!DOCTYPE html>
 
 <html lang="en">
-<head>
+  <head>
 	<meta charset="utf-8">
-	<title>SOLS excitation: Adjusting light-sheet thickness</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="stylesheets/style.css">
     <link rel="stylesheet" href="stylesheets/prism.css">
     <script src="javascript/python-highlighting/prism.js"></script>
     <script async src="javascript/Minimal-MathJax/MathJax.js?config=TeX-AMS_CHTML"></script>
     <script src="javascript/update_figures.js"></script>
     <script src="javascript/reference_list/reference_list.js"></script>
-</head>
+	<title>amsikking: Adjusting light-sheet thickness</title>
+  </head>
 
-<body>
-<section>
-	<a href="https://amsikking.github.io/">Home page</a>
-	<h1>amsikking: SOLS excitation</h1>
-	<a href="./index.html">Index</a>
+  <body>
+  	<header>
+	  <nav>
+	    <ul>
+		  <li><h1 style="margin-top: 0rem; margin-left: 1rem; margin-right: 1rem">amsikking:</h1></li>
+		  <li><a href="https://amsikking.github.io/">Home page</a></li>
+		  <li><a href="https://github.com/amsikking/SOLS_excitation">GitHub</a></li>
+	    </ul>
+	  </nav>
+	</header>
 
-	<h2>Adjusting light-sheet thickness</h2>
-	<p>
-	Once the maximum sheet divergence \(\theta_x\) has been calculated (for
-	example by choosing a tilt angle \(\theta_t\) that is sufficient for the 
-	<em>thinnest</em> usable light-sheet), it can be useful to see how this angular 
-	range translates to a width \(x\) in the back focal plane (e.g. for determining 
-	and adjusting excitation optics):
-	</p>
-	
-	<figure>
-    <img src="figures/SOLS_excitation_thickness.png" alt="SOLS_excitation_thickness.png">
-    <figcaption>
-	(<a href="figures/SOLS_excitation_sketches.odp">.odp sketch</a>)
-	</figcaption>
-	</figure>
+	<main>
+	  <h1>SOLS excitation</h1>
+	  <p>In a single-objective light-sheet microscope, how should we configure the excitation?</p>
+	  <a href="./index.html">Contents</a>
+	  <section>
+		<h2>Adjusting light-sheet thickness</h2>
+		<p>
+		Once the maximum sheet divergence \(\theta_x\) has been calculated (for
+		example by choosing a tilt angle \(\theta_t\) that is sufficient for the 
+		<em>thinnest</em> usable light-sheet), it can be useful to see how this angular 
+		range translates to a width \(x\) in the back focal plane (e.g. for determining 
+		and adjusting excitation optics):
+		</p>
+		
+		<figure>
+		  <img src="figures/SOLS_excitation_thickness.png" alt="SOLS_excitation_thickness.png">
+		  <figcaption>
+		  (<a href="figures/SOLS_excitation_sketches.odp">.odp sketch</a>)
+		  </figcaption>
+		</figure>
 
-	<p>
-	For infinity corrected objectives the ray height in the back focal plane 
-	\(r_{BFP}\) relates to the angles in the object space via:
-	
-	\[ r_{BFP} = f n \sin\theta \tag{1}\]
-	
-	So the width of the excitation beam in the BFP is:
-	
-	\[ x = f n [\sin(\theta_e + \theta_x) - \sin(\theta_e - \theta_x)] \tag{2}\]
+		<p>
+		For infinity corrected objectives the ray height in the back focal plane 
+		\(r_{BFP}\) relates to the angles in the object space via:
+		
+		\[ r_{BFP} = f n \sin\theta \tag{1}\]
+		
+		So the width of the excitation beam in the BFP is:
+		
+		\[ x = f n [\sin(\theta_e + \theta_x) - \sin(\theta_e - \theta_x)] \tag{2}\]
 
-	which we can rewrite with \(\sin(a \pm b) = \sin a\cos b \pm \cos a\sin b\):
-	
-	\[ x = f n [\sin \theta_e\cos \theta_x + \cos \theta_e\sin \theta_x
-	- (\sin \theta_e\cos \theta_x - \cos \theta_e\sin \theta_x)] \tag{3}\]
-	
-	which reduces nicely to:
-	
-	\[ x = 2 f n \cos\theta_e \sin \theta_x \tag{4}\]
+		which we can rewrite with \(\sin(a \pm b) = \sin a\cos b \pm \cos a\sin b\):
+		
+		\[ x = f n [\sin \theta_e\cos \theta_x + \cos \theta_e\sin \theta_x
+		- (\sin \theta_e\cos \theta_x - \cos \theta_e\sin \theta_x)] \tag{3}\]
+		
+		which reduces nicely to:
+		
+		\[ x = 2 f n \cos\theta_e \sin \theta_x \tag{4}\]
 
-	Or in terms of the tilt of microscope 3 (using 
-	\(\theta_e = \frac{\pi}{2} - \theta_t\)) and assuming 
-	\(\sin\theta_x \approx \theta_x\):
-	
-	\[ x = 2 f n \sin\theta_t \; \theta_x \tag{5}\]
+		Or in terms of the tilt of microscope 3 (using 
+		\(\theta_e = \frac{\pi}{2} - \theta_t\)) and assuming 
+		\(\sin\theta_x \approx \theta_x\):
+		
+		\[ x = 2 f n \sin\theta_t \; \theta_x \tag{5}\]
 
-	If we adopt the tilt and excitation angles (\(\theta_t \) and \(\theta_x \)) from 
-	<a href="https://amsikking.github.io/SOLS_optimum_tilt/">SOLS_optimum_tilt</a>
-	then we can calculate the <strong>maximum BFP width</strong> for different objectives 
-	(see <a href="figures/SOLS_lightsheet_bfp_width.py">Python script</a>). Here are 
-	some examples:
-	</p>
-	
-<table style="text-align:center">
-  <tr><th>Make</th>	<th>Mag</th> <th>NA</th>  <th>n</th>	<th>f (mm)</th> <th>tilt (deg)</th> <th>max divergence (deg)</th> 	<th>max x (mm)</th></tr>
-  <tr><td>Nikon</td><td>100x</td><td>1.35</td><td>1.41</td> <td>2</td>	    <td>25.0</td>		<td>8.3</td>				  	<td>0.35</td></tr>
-  <tr><td>Nikon</td><td> 40x</td><td>1.15</td><td>1.33</td> <td>5</td>	    <td>37.5</td>		<td>7.3</td>					<td>1.02</td></tr>
-  <tr><td>Nikon</td><td> 25x</td><td>1.00</td><td>1.33</td> <td>8</td>	    <td>47.4</td>		<td>6.2</td>					<td>1.69</td></tr>
-</table>
-	
-	<p>
-	The maximum value of \(x\) can now be used to specify a laser beam input 
-	\(\frac{1}{e^2}\) waist on this axis \(w_{laser}\), for example by setting:
-	
-	\[ 2w_{laser} = \max(x) \tag{6}\]
-	
-	We can now rearrange (5) for the <em>transverse</em> full width half max of the
-	light-sheet in the sample space (i.e. the thickness):
-	
-	\[ w_{FWHM} = \sqrt{2\ln2} \frac{2 f \sin\theta_t \lambda_0}{\pi x} \tag{7}\]
-	
-	So if \(x\) now corresponds to an adjustable zoom optic, then (7) is an 
-	<em>exact</em> calculation. If however, \(x\) is mapped to an <strong>adjustable 
-	aperture</strong>, then (7) is <em>approximate</em> (due to clipping the 
-	Gaussian beam). In both cases the mapping of \(x\) to the BFP is 
-	<em>asymmetric</em> around the tilted image plane \(\theta_t \), so for large 
-	changes in \(x\) a 'light-sheet tilt to image' adjustment may be needed.
-	</p>
-	<p>
-	The length of sample \(z_s\) over which we can expect to maintain uniform
-	illumination (>90% of the peak intensity) is then:
-	
-	\[ z_s = \frac{\pi n}{3\ln2 \lambda_0} w_{FWHM}^2 \tag{8}\]
+		If we adopt the tilt and excitation angles (\(\theta_t \) and \(\theta_x \)) from 
+		<a href="https://amsikking.github.io/SOLS_optimum_tilt/">SOLS_optimum_tilt</a>
+		then we can calculate the <strong>maximum BFP width</strong> for different objectives 
+		(see <a href="figures/SOLS_lightsheet_bfp_width.py">Python script</a>). Here are 
+		some examples:
+		</p>
+		
+		<table style="text-align:center">
+		  <tr><th>Make</th>	<th>Mag</th> <th>NA</th>  <th>n</th>	<th>f (mm)</th> <th>tilt (deg)</th> <th>max divergence (deg)</th> 	<th>max x (mm)</th></tr>
+		  <tr><td>Nikon</td><td>100x</td><td>1.35</td><td>1.41</td> <td>2</td>	    <td>25.0</td>		<td>8.3</td>				  	<td>0.35</td></tr>
+		  <tr><td>Nikon</td><td> 40x</td><td>1.15</td><td>1.33</td> <td>5</td>	    <td>37.5</td>		<td>7.3</td>					<td>1.02</td></tr>
+		  <tr><td>Nikon</td><td> 25x</td><td>1.00</td><td>1.33</td> <td>8</td>	    <td>47.4</td>		<td>6.2</td>					<td>1.69</td></tr>
+		</table>
+		
+		<p>
+		The maximum value of \(x\) can now be used to specify a laser beam input 
+		\(\frac{1}{e^2}\) waist on this axis \(w_{laser}\), for example by setting:
+		
+		\[ 2w_{laser} = \max(x) \tag{6}\]
+		
+		We can now rearrange (5) for the <em>transverse</em> full width half max of the
+		light-sheet in the sample space (i.e. the thickness):
+		
+		\[ w_{FWHM} = \sqrt{2\ln2} \frac{2 f \sin\theta_t \lambda_0}{\pi x} \tag{7}\]
+		
+		So if \(x\) now corresponds to an adjustable zoom optic, then (7) is an 
+		<em>exact</em> calculation. If however, \(x\) is mapped to an <strong>adjustable 
+		aperture</strong>, then (7) is <em>approximate</em> (due to clipping the 
+		Gaussian beam). In both cases the mapping of \(x\) to the BFP is 
+		<em>asymmetric</em> around the tilted image plane \(\theta_t \), so for large 
+		changes in \(x\) a 'light-sheet tilt to image' adjustment may be needed.
+		</p>
+		<p>
+		The length of sample \(z_s\) over which we can expect to maintain uniform
+		illumination (>90% of the peak intensity) is then:
+		
+		\[ z_s = \frac{\pi n}{3\ln2 \lambda_0} w_{FWHM}^2 \tag{8}\]
 
-	<strong>Note:</strong> If the aperture or zoom optic is in a <em>magnified</em>
-	space in relation to the objective 1 BFP (which it usually is), then this 
-	magnification factor should be taken into account when considering the size
-	of \(x\). See this 
-	<a href="figures/SOLS_lightsheet_bfp_width_to_properties.py">Python script</a> 
-	for an example based on the original SOLS microscope.
-	</p>
-
-</section>
-</body>
+		<strong>Note:</strong> If the aperture or zoom optic is in a <em>magnified</em>
+		space in relation to the objective 1 BFP (which it usually is), then this 
+		magnification factor should be taken into account when considering the size
+		of \(x\). See this 
+		<a href="figures/SOLS_lightsheet_bfp_width_to_properties.py">Python script</a> 
+		for an example based on the original SOLS microscope.
+		</p>
+	  </section>
+	</main>
+  </body>
 </html>

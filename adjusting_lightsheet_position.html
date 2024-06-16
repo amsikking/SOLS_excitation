@@ -2,62 +2,73 @@
 <!DOCTYPE html>
 
 <html lang="en">
-<head>
+  <head>
 	<meta charset="utf-8">
-	<title>SOLS excitation: Adjusting light-sheet position</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="stylesheets/style.css">
     <link rel="stylesheet" href="stylesheets/prism.css">
     <script src="javascript/python-highlighting/prism.js"></script>
     <script async src="javascript/Minimal-MathJax/MathJax.js?config=TeX-AMS_CHTML"></script>
     <script src="javascript/update_figures.js"></script>
     <script src="javascript/reference_list/reference_list.js"></script>
-</head>
+	<title>amsikking: Adjusting light-sheet position</title>
+  </head>
 
-<body>
-<section>
-	<a href="https://amsikking.github.io/">Home page</a>
-	<h1>amsikking: SOLS excitation</h1>
-	<a href="./index.html">Index</a>
+  <body>
+  	<header>
+	  <nav>
+	    <ul>
+		  <li><h1 style="margin-top: 0rem; margin-left: 1rem; margin-right: 1rem">amsikking:</h1></li>
+		  <li><a href="https://amsikking.github.io/">Home page</a></li>
+		  <li><a href="https://github.com/amsikking/SOLS_excitation">GitHub</a></li>
+	    </ul>
+	  </nav>
+	</header>
 
-	<h2>Adjusting light-sheet position</h2>
-	<p>
-	It is important to match the light-sheet <em>position</em> to the image plane and 
-	center the lightsheet on the field of view (FOV). This can be done by adjusting 
-	the <em>angle</em> of the excitation in the back focal plane (BFP) of objective 1,
-	for example by conjugating a <em>gimbal mirror</em> (or similar) to the BFP on 
-	some part of the excitation path. If the gimbal mirror has 'tip/tilt' adjustment,
-	then one adjuster be arranged to <strong>align the light-sheet position with the 
-	image plane</strong>,
-	</p>
+	<main>
+	  <h1>SOLS excitation</h1>
+	  <p>In a single-objective light-sheet microscope, how should we configure the excitation?</p>
+	  <a href="./index.html">Contents</a>
+	  <section>
+		<h2>Adjusting light-sheet position</h2>
+		<p>
+		It is important to match the light-sheet <em>position</em> to the image plane and 
+		center the lightsheet on the field of view (FOV). This can be done by adjusting 
+		the <em>angle</em> of the excitation in the back focal plane (BFP) of objective 1,
+		for example by conjugating a <em>gimbal mirror</em> (or similar) to the BFP on 
+		some part of the excitation path. If the gimbal mirror has 'tip/tilt' adjustment,
+		then one adjuster be arranged to <strong>align the light-sheet position with the 
+		image plane</strong>,
+		</p>
 
-	<figure>
-    <img src="figures/SOLS_excitation_position_to_image.png" alt="SOLS_excitation_position_to_image.png">
-    <figcaption>
-	(<a href="figures/SOLS_excitation_sketches.odp">.odp sketch</a>)
-	</figcaption>
-	</figure>
+		<figure>
+		  <img src="figures/SOLS_excitation_position_to_image.png" alt="SOLS_excitation_position_to_image.png">
+		  <figcaption>
+		  (<a href="figures/SOLS_excitation_sketches.odp">.odp sketch</a>)
+		  </figcaption>
+		</figure>
 
-	<p>
-	and the other adjuster to <strong>center the light-sheet on the field of 
-	view</strong>:
-	</p>
+		<p>
+		and the other adjuster to <strong>center the light-sheet on the field of 
+		view</strong>:
+		</p>
 
-	<figure>
-    <img src="figures/SOLS_excitation_position_to_center.png" alt="SOLS_excitation_position_to_center.png">
-    <figcaption>
-	(<a href="figures/SOLS_excitation_sketches.odp">.odp sketch</a>)
-	</figcaption>
-	</figure>
+		<figure>
+		  <img src="figures/SOLS_excitation_position_to_center.png" alt="SOLS_excitation_position_to_center.png">
+		  <figcaption>
+		  (<a href="figures/SOLS_excitation_sketches.odp">.odp sketch</a>)
+		  </figcaption>
+		</figure>
 
-	<p>
-	<strong>Note:</strong> It may be worth <em>automating</em> one or both of these
-	adjustments. For example the light-sheet 'position to image' adjuster can be used
-	to <strong>chase thermal drift and accommodate different samples</strong> that may 
-	affect this (critical) alignment. The 'position to center' adjuster can be used to
-	<strong>scan the light-sheet side to side</strong> for more uniform intensity 
-	across the FOV.
-	</p>
-
-</section>
-</body>
+		<p>
+		<strong>Note:</strong> It may be worth <em>automating</em> one or both of these
+		adjustments. For example the light-sheet 'position to image' adjuster can be used
+		to <strong>chase thermal drift and accommodate different samples</strong> that may 
+		affect this (critical) alignment. The 'position to center' adjuster can be used to
+		<strong>scan the light-sheet side to side</strong> for more uniform intensity 
+		across the FOV.
+		</p>
+	  </section>
+	</main>
+  </body>
 </html>
