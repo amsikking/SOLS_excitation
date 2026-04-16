@@ -1,6 +1,6 @@
 # SOLS_excitation
 
-<a href="https://doi.org/10.5281/zenodo.14369515"><img src="https://zenodo.org/badge/DOI/10.5281/zenodo.14369515.svg" alt="DOI"></a>
+<a href="https://doi.org/10.5281/zenodo.14369515"><img src="https://img.shields.io/badge/DOI-10.5281/zenodo.14369515-blue.svg" alt="DOI"></a>
 
 In a single-objective light-sheet (SOLS) microscope, how should we configure the excitation?
 https://amsikking.github.io/SOLS_excitation
